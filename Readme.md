@@ -1,5 +1,5 @@
 
-Project Overview:
+# Project Overview:
 This Task Management API allows users to:
 
 *Register and login securely
@@ -7,7 +7,7 @@ This Task Management API allows users to:
 *Track task status (pending, in-progress, completed)
 *The API follows RESTful design principles and includes JWT-based authentication to ensure that users can only access their own tasks.
 
-Features---
+# API Features---
 *User Authentication
 *Registration with secure password hashing
 *Login with JWT token generation
@@ -40,13 +40,22 @@ npm run dev
 
 # POSTMAN CHECK API
 npm start
+
+# ................Note.......................
+
+Always use /api in the any Api endpoints
+
+example register===>http://localhost:3000/api/auth/register
+example login===>http://localhost:3000/api/auth/login
+
+.................................
 ===>The API will be available at http://localhost:3000
 API Documentation
 Base URL
-Local: htt
-Deployed:
+Local: 
+Deployed:https://backendcrc-project.onrender.com/api
 Authentication Endpoints
-Register a new user
+# Register a new user
 URL: /auth/register
 Method: POST
 Request Body:
@@ -66,7 +75,7 @@ json
 {
   "message": "User registered successfully"
 }
-Login
+# User Login
 URL: /auth/login
 Method: POST
 Request Body:
@@ -84,9 +93,9 @@ json
 
 
 {
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDc4OWZkMzUzZGYxMjM0NTY3ODkwYWIiLCJpYXQiOjE2ODU2MjE3MTUsImV4cCI6MTY4NTYyNTMxNX0.example-token"
+  "token": "example-token"
 }
-Task Endpoints
+# Task Endpoints
 All task endpoints require authentication. Include the JWT token in the request header:
 
 
@@ -120,7 +129,7 @@ json
   "createdAt": "2023-06-01T12:34:56.789Z",
   "updatedAt": "2023-06-01T12:34:56.789Z"
 }
-Get All Tasks
+# Get All Tasks use /api
 URL: /tasks
 Method: GET
 Headers: Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDc4OWZkMzUzZGYxMjM0NTY3ODkwYWIiLCJpYXQiOjE2ODU2MjE3MTUsImV4cCI6MTY4NTYyNTMxNX0.example-token
@@ -150,7 +159,7 @@ json
     "updatedAt": "2023-06-01T11:22:33.789Z"
   }
 ]
-Get a Specific Task
+# Get a Specific Task
 URL: /tasks/:id
 Method: GET
 Headers: Authorization: Bearer your-jwt-token
@@ -169,7 +178,7 @@ json
   "createdAt": "2023-06-01T12:34:56.789Z",
   "updatedAt": "2023-06-01T12:34:56.789Z"
 }
-Update a Task
+# Update a Task
 URL: /tasks/:id
 Method: PUT
 Headers: Authorization: Bearer your-jwt-token
@@ -197,7 +206,7 @@ json
   "createdAt": "2023-06-01T12:34:56.789Z",
   "updatedAt": "2023-06-01T13:45:12.345Z"
 }
-Delete a Task
+#  Delete a Task
 URL: /tasks/:id
 Method: DELETE
 Headers: Authorization: Bearer your-jwt-token
