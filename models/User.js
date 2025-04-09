@@ -16,6 +16,9 @@ const Userschema= new mongoose.Schema({
         minlength: 6,
         maxlength: 1024
     },
+    {
+        timestamps: true
+    }
 })
 //Creating Hash for password before saving to database
 //using pre middleware
