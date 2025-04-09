@@ -1,6 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+const authRoutes = require('./routes/auth');
+const taskRoutes = require('./routes/task');
 dotenv.config();
 //ram ram
 // Initialize Express app
@@ -14,11 +16,10 @@ app.use(express.json());
     .then(() => console.log('Connected to MongoDB'))
     .catch(err => console.error('Could not connect to MongoDB', err));
    
-// Define a simple route
-app.get('/', (req, res) => {
-    res.send('Welcome to the Task Manager API!');
-}
-);
+//routes
+app.use('/api/auth', authRoutes);
+app.use('/api/tasks', taskRoutes);
+
 
 // Start the server
 

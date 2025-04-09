@@ -15,18 +15,21 @@ const Userschema= new mongoose.Schema({
         trim: true,
         minlength: 6,
         maxlength: 1024
-    },
+    }},
     {
         timestamps: true
-    }
-})
+    
+}
+)
 //Creating Hash for password before saving to database
 //using pre middleware
-Userschema.pre('save',async function(next) {
-    if(!this.isModified('password'))
-    this.password= await bcrypt.hash(this.password,13);
+Userschema.pre('save', async function (next) {
+    if (!this.isModified('password')) {
+        return next(); 
+    }
+    this.password = await bcrypt.hash(this.password, 13); // Hash the password
     next();
-})
+});
 
 //comparing passwords
 Userschema.methods.comparePassword= async function(enteredPassword){
