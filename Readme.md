@@ -44,9 +44,14 @@ npm start
 # ................Note.......................
 
 Always use /api in the any Api endpoints
-
+local:
 example register===>http://localhost:3000/api/auth/register
 example login===>http://localhost:3000/api/auth/login
+example create task===>http://localhost:3000/api/tasks
+deployed:
+example register===>https://backendcrc-project.onrender.com/api/auth/register
+example login===>https://backendcrc-project.onrender.com/api/auth/login
+example create task===>https://backendcrc-project.onrender.com/api/tasks
 
 .................................
 ===>The API will be available at http://localhost:3000
